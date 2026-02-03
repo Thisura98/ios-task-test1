@@ -17,36 +17,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIZ-Jv-f5W">
-                                <rect key="frame" x="0.0" y="326" width="393" height="200.33333333333337"/>
+                                <rect key="frame" x="0.0" y="306" width="393" height="240.33333333333337"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9My-yq-G9T">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9My-yq-G9T">
                                         <rect key="frame" x="10" y="9.9999999999999982" width="373" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic1-sn-B30">
-                                        <rect key="frame" x="96.666666666666686" y="130.33333333333331" width="200" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="iZE-Nb-g0u"/>
-                                            <constraint firstAttribute="width" priority="999" constant="200" id="uya-iX-Jf5"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k6C-hp-5ri"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SG9-AV-OHm">
+                                        <rect key="frame" x="96.666666666666686" y="130.33333333333331" width="200" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic1-sn-B30">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="iZE-Nb-g0u"/>
+                                                    <constraint firstAttribute="width" priority="999" constant="200" id="uya-iX-Jf5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SBN-Nb-QTa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-EP-txS">
+                                                <rect key="frame" x="0.0" y="50" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" priority="999" constant="200" id="Rbs-9n-KCf"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ytF-p1-o5p"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Stop"/>
+                                                <connections>
+                                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GOI-Jo-mJ2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Ic1-sn-B30" secondAttribute="bottom" constant="30" id="7Wc-j6-QXf"/>
+                                    <constraint firstItem="SG9-AV-OHm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NIZ-Jv-f5W" secondAttribute="leading" constant="10" id="4YQ-37-xYm"/>
                                     <constraint firstItem="9My-yq-G9T" firstAttribute="top" secondItem="NIZ-Jv-f5W" secondAttribute="top" constant="10" id="BSX-33-Ldx"/>
-                                    <constraint firstItem="Ic1-sn-B30" firstAttribute="centerX" secondItem="NIZ-Jv-f5W" secondAttribute="centerX" id="HWD-l5-wpu"/>
                                     <constraint firstItem="9My-yq-G9T" firstAttribute="centerX" secondItem="NIZ-Jv-f5W" secondAttribute="centerX" id="Vxp-lH-Vb7"/>
+                                    <constraint firstAttribute="bottom" secondItem="SG9-AV-OHm" secondAttribute="bottom" constant="20" id="hRy-YR-hg0"/>
                                     <constraint firstItem="9My-yq-G9T" firstAttribute="leading" secondItem="NIZ-Jv-f5W" secondAttribute="leading" constant="10" id="qHT-6l-iF3"/>
-                                    <constraint firstItem="Ic1-sn-B30" firstAttribute="centerX" secondItem="NIZ-Jv-f5W" secondAttribute="centerX" id="rAq-2B-iSA"/>
-                                    <constraint firstItem="Ic1-sn-B30" firstAttribute="top" secondItem="9My-yq-G9T" secondAttribute="bottom" constant="100" id="zb4-aI-0u9"/>
+                                    <constraint firstItem="SG9-AV-OHm" firstAttribute="centerX" secondItem="NIZ-Jv-f5W" secondAttribute="centerX" id="rVE-nf-miv"/>
+                                    <constraint firstItem="SG9-AV-OHm" firstAttribute="top" secondItem="9My-yq-G9T" secondAttribute="bottom" constant="100" id="vmr-By-cwc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -59,8 +76,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="Ic1-sn-B30" id="zKl-7e-rjb"/>
-                        <outlet property="label" destination="9My-yq-G9T" id="2yP-Vl-jgc"/>
+                        <outlet property="startButton" destination="Ic1-sn-B30" id="FhM-D3-5A4"/>
+                        <outlet property="statusLabel" destination="9My-yq-G9T" id="cab-s1-KjF"/>
+                        <outlet property="stopButton" destination="aMx-EP-txS" id="8IM-wj-i4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

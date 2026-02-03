@@ -20,7 +20,17 @@ class TaskRunner{
     private func demoTask() async{
         for i in 0..<20{
             print("demoTask: \(i)")
-            try! await Task.sleep(for: .seconds(1))
+            do{
+                try await Task.sleep(for: .seconds(1))
+            }
+            catch is CancellationError{
+                print("Task was canceled!")
+                break
+            }
+            catch{
+                print("Task throw an unhandled error \(error)")
+                break
+            }
         }
     }
     
