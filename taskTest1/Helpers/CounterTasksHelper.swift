@@ -11,8 +11,9 @@ class CounterTasksHelper{
     private var taskId = 0
     
     private func getTaskId() -> Int{
+        let id = taskId
         taskId += 1
-        return taskId
+        return id
     }
     
     func generateCounterTask(_ intervalInMs: Int, _ delay: Int, _ notifier: @escaping (CounterTaskParam) -> Void) -> Task<Void, Never>{
