@@ -46,7 +46,7 @@ class ActorDemoController: UIViewController {
     
     private func handleCount(_ params: CounterTaskParam){
         // debug
-        vm1.setCount(params.count)
+        vm2.setCount(params.count)
     }
     
     @IBAction func switchClicked(_ sender: Any) {
