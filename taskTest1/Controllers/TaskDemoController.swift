@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class TaskDemoController: UIViewController {
 
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
