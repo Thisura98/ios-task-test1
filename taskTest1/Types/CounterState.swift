@@ -7,12 +7,14 @@
 
 import Foundation
 
+fileprivate let durationInMs = 1000
+
 class ClassBasedCounterState{
     
     var count: Int = 0
     
     func update() async throws {
-        try await Task.sleep(for: .milliseconds(1000))
+        try await Task.sleep(for: .milliseconds(durationInMs))
         count += 1
     }
     
@@ -27,7 +29,7 @@ actor ActorBasedCounterState{
     var count: Int = 0
     
     func update() async throws {
-        try await Task.sleep(for: .milliseconds(1000))
+        try await Task.sleep(for: .milliseconds(durationInMs))
         count += 1
     }
     
