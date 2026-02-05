@@ -5,48 +5,34 @@
 //  Created by Thisura Dodangoda on 2026-02-04.
 //
 
-protocol CounterSnapshot{
-    func getSnapshot() async -> [Int]
+import Foundation
+
+class ClassBasedCounterState{
+    
+    var count: Int = 0
+    
+    func update() async throws {
+        try await Task.sleep(for: .milliseconds(1000))
+        count += 1
+    }
+    
+    func reset(){
+        count = 0
+    }
+    
 }
 
-class ClassBasedCounterState: CounterSnapshot{
-    var c1: Int = 0
-    var c2: Int = 0
-    var c3: Int = 0
+actor ActorBasedCounterState{
     
-    func getSnapshot() -> [Int] {
-        return [c1, c2, c3]
+    var count: Int = 0
+    
+    func update() async throws {
+        try await Task.sleep(for: .milliseconds(1000))
+        count += 1
     }
     
-    func update(counterIndex: Int, _ value: Int){
-        switch(counterIndex){
-        case 0: c1 += value
-        case 1: c2 += value
-        case 2: c3 += value
-        default:
-            fatalError()
-        }
-    }
-}
-
-actor ActorBasedCounterState: CounterSnapshot{
-    
-    var c1: Int = 0
-    var c2: Int = 0
-    var c3: Int = 0
-    
-    func getSnapshot() -> [Int] {
-        return [c1, c2, c3]
-    }
-    
-    func update(counterIndex: Int, _ value: Int){
-        switch(counterIndex){
-        case 0: c1 += value
-        case 1: c2 += value
-        case 2: c3 += value
-        default:
-            fatalError()
-        }
+    func reset(){
+        count = 0
     }
     
 }
